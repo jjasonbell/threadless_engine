@@ -1,0 +1,15 @@
+library(RColorBrewer)
+colors = brewer.pal(9, 'Blues')
+set.seed(44)
+x <- runif(2000)
+y <- rnorm(2000) - x
+symbols = c(0, 1, 2, 3, 4, 5, 6, 8)
+sizes = c(1.4, 1.6, 1.8, 2)
+png('test.png', 
+    width = 2000, height = 2000)
+plot(x, y, pch = symbols, cex = sizes* 1.3, lwd = 3, 
+     bg = 'black', col = colors, axes = F, xlab = '', ylab = '')
+x2 <- runif(1000, 0, 1/4)
+y2 <- runif(1000)
+dev.off()
+#points(x2, y2, pch = 3, col = colors)
