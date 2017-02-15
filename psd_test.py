@@ -2,7 +2,7 @@ import os, subprocess
 os.chdir(os.path.dirname(os.path.realpath(__file__)))
 import numpy as np
 from psd_tools import PSDImage
-from PIL import Image
+from PIL import Image, ImageEnhance
 
 
 def img_resize(target_width, img):
@@ -22,6 +22,8 @@ def color_swap(from_triple, to_triple, img):
 psd = PSDImage.load('tee_template.psd')
 background = Image.new('RGBA', (1200, 1200), 'white')
 shadows = psd.layers[0].layers[0].as_PIL()
+#shadows = ImageEnhance.Brightness(shadows).enhance(0)
+shadows = ImageEnhance.Brightness(shadows).enhance(1.1)
 shirt = psd.layers[2].layers[4].as_PIL()
 subprocess.call(['RScript', 'testPlot.R'])
 design = Image.open('test.png')
