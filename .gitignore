@@ -1,3 +1,4 @@
 *.png
 *.jpg
 .Rhistory
+.DS_Store

@@ -15,6 +15,6 @@ y_range <- c(min(y), max(y))
 span <- abs(y_range[2] - y_range[1])
 y_range <- c(y_range[1], y_range[2])
 plot(x_range, y_range, type = 'n', axes = F, xlab = '', ylab = '')
-points(x, y, pch = symbols, cex = sizes * 1.3 * 2.1, lwd = 3 * 2.1, 
+points(x, y, pch = symbols, cex = sizes * 1.3, lwd = 3, 
      bg = 'black', col = colors)
 dev.off()
